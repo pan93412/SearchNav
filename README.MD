@@ -12,7 +12,7 @@ $ python3 manage.py runserver
 密碼：ProJect12
 ```
 
-可自行更改。
+控制面板於 `/control`。
 ## 回報問題
 使用 GitHub 提供的 Issue Tracker 回報問題
 
