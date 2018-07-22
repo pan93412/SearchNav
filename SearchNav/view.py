@@ -28,7 +28,7 @@ def index(request):
      
     if "teameow" in request.GET:
         if request.GET['teameow'] == "Pusheen":
-            return HttpResponse("Pusheen 始春"
+            return HttpResponse("Pusheen 始春")
         else:
             return HttpResponse(
                 r"<img src='https://yami.io/content/images/2016/10/photo_2016-10-18_04-15-06.jpg' alt='始春' /><p>始春</p>"
