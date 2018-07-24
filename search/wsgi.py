@@ -1,5 +1,5 @@
 """
-WSGI config for SearchNav project.
+WSGI config for search project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/2.0/howto/deployment/wsgi/
 
 import os
 
+sys.path.append("/home/pan93412/public_html")
+
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "SearchNav.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "search.settings")
 
 application = get_wsgi_application()

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>搜尋引擎整合系統 | 包含了 Google, Bing, DuckDuckGo 的搜尋引擎整合系統</title>
+    <meta charset="UTF-8">
+    {# Tocas UI：CSS 與元件 #}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.css">
+    {# Tocas JS：模塊與 JavaScript 函式 #}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.js"></script>
+    {# 響應式標籤 #}
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {# 註解標籤 #}
+    <meta name="author" content="pan93412">
+    <meta name="description" content="包含了 Google, Bing, DuckDuckGo 的搜尋引擎整合系統。">
+    <meta name="keywords" content="Google, Bing, DuckDuckGo, 搜尋引擎, 搜尋引擎整合, TocasUI">
+    <style>
+        html {
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            html {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ts container">
+        <div class="ts heading slate">
+            <span class="header">搜尋引擎整合系統</span>
+            <span class="description">在單一網站上，讓您能更快速導向 Google、Bing、DuckDuckGo。</span>
+            <span class="description">我們保證 <strong><em>不收集</em> 您的任何資料</strong>！</strong></span>
+        </div>
+        <hr>
+        <form action="/" method="GET">
+            <div class="ts input">
+                <input type="text" placeholder="輸入你想搜尋的東西……" value="{{result}}" name="q">
+            </div>
+            <input class="ts inverted button" type="submit" value="搜尋！">
+            <a class="ts inverted button" href="/?q={{random}}">試試手氣？</a>
+        </form>
+        <hr>
+        <p />
+        <p />
+        {% if result != "" %}
+        <a class="ts info button" href="https://www.google.com/search?q={{result}}">Google 的「{{result}}」搜尋結果</a>
+        <br/>
+        <br />
+        <a class="ts info button" href="https://www.bing.com/search?q={{result}}">Bing 的「{{result}}」搜尋結果</a>
+        <br/>
+        <br />
+        <a class="ts info button" href="https://duckduckgo.com/?q={{result}}">DuckDuckGo 的「{{result}}」搜尋結果</a>
+        <br/>
+        <br />
+        {% if result == "teameow" or result == "TeaMeow" or result == "TEAMEOW" %}
+        <a class="ts info button" href="/teameow">** TeaMeow 彩蛋 **</a>
+        <br/>
+        <br />
+        {% endif %}
+        {% else %}
+        <div class="ts raised segment">
+            <strong>
+                <em>你居然什麼也沒輸入！！！！！！！</em>
+            </strong>
+            <a href="/?q={{random}}">試試手氣？</a>
+        </div>
+        {% endif %}
+        <hr>
+        <p>現在是 {{now_time}} (台灣時間)
+            <br>開發者：
+            <a href="mailto:pan93412 at gmail dot com">pan93412
+                <pan93412 at gmail dot com>
+            </a>
+            <br>伺服器於 {{start_time}} 開啟；開機識別碼：{{random_code}}
+        </p>
+    </div>
+</body>
+
+</html>

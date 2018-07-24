@@ -1,4 +1,4 @@
-./.directory
-./search/.directory
-./search/.vscode
-./search/__pycache__
+.directory
+search/.directory
+search/.vscode/
+search/__pycache__
