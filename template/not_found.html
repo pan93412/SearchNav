@@ -32,42 +32,13 @@
         <div class="ts heading slate">
             <span class="header">搜尋引擎整合系統</span>
             <span class="description">在單一網站上，讓您能更快速導向 Google、Bing、DuckDuckGo。</span>
-            <span class="description">我們保證 <strong><em>不收集</em> 您的任何資料</strong>！</strong></span>
+            <span class="description">我們保證 <strong><em>不收集</em> 您的任何資料</strong>！</span>
         </div>
         <hr>
-        <form action="/" method="GET">
-            <div class="ts input">
-                <input type="text" placeholder="輸入你想搜尋的東西……" value="{{result}}" name="q">
-            </div>
-            <input class="ts inverted button" type="submit" value="搜尋！">
-            <a class="ts inverted button" href="/?q={{random}}">試試手氣？</a>
-        </form>
-        <hr>
-        <p />
-        <p />
-        {% if result != "" %}
-        <a class="ts info button" href="https://www.google.com/search?q={{result}}">Google 的「{{result}}」搜尋結果</a>
-        <br/>
-        <br />
-        <a class="ts info button" href="https://www.bing.com/search?q={{result}}">Bing 的「{{result}}」搜尋結果</a>
-        <br/>
-        <br />
-        <a class="ts info button" href="https://duckduckgo.com/?q={{result}}">DuckDuckGo 的「{{result}}」搜尋結果</a>
-        <br/>
-        <br />
-        {% if result == "teameow" or result == "TeaMeow" or result == "TEAMEOW" %}
-        <a class="ts info button" href="/teameow">** TeaMeow 彩蛋 **</a>
-        <br/>
-        <br />
-        {% endif %}
-        {% else %}
         <div class="ts raised segment">
-            <strong>
-                <em>你居然什麼也沒輸入！！！！！！！</em>
-            </strong>
-            <a href="/?q={{random}}">試試手氣？</a>
+            你想要找 <em>{{search}}</em> 這個頁面，但是這個頁面 <strong>不存在</strong>！
+            <a href="/?q={{search}}">你是想搜尋 {{search}} 嗎？</a>
         </div>
-        {% endif %}
         <hr>
         <p>現在是 {{now_time}} (台灣時間)
             <br>開發者：

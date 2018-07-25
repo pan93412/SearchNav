@@ -31,7 +31,6 @@ def search(r):
     search_var.update({'random': random.choice(random_list)}) # 「試試手氣？」功能
 
     # 伺服器啟動時間與目前時間部份
-    endTime = time.time() - startTime
     search_var.update({
         'start_time': time.asctime(time.localtime(startTime)),
         'now_time': datetime.datetime.now() + datetime.timedelta(hours = 8),
@@ -45,3 +44,14 @@ def search(r):
     
    # 渲染 search.html 並呈現給客戶端
     return HttpResponse(loader.get_template("search.html").render(search_var))
+
+# 若使用者輸入錯誤之後的導向
+def autor(r, search_query):
+    tp = loader.get_template("not_found.html")
+    var = {
+        'search': search_query,
+        'start_time': time.asctime(time.localtime(startTime)),
+        'now_time': datetime.datetime.now() + datetime.timedelta(hours = 8),
+        'random_code': random_str
+    }
+    return HttpResponse(tp.render(var, r))
